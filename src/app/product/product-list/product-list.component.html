@@ -1,0 +1,52 @@
+
+
+<div class="card">
+
+    <div class="card-header">
+        Liata de productos
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">Filtrar por:</div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="filter">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Filtro: </h3>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table" *ngIf="productos.length">
+            <thead>
+                <tr>
+                    <th>
+                        <button (click)="showImage()" type="button" class="btn btn-primary">Imagen</button>
+                    </th>
+                    <th>Modelo</th>
+                    <th>Descripcion</th>
+                    <th>Año</th>
+                    <th>Precio</th>
+                    <th>Marca</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let productos of productos">
+                    <td>
+                        <img *ngIf="muestraImg" [src]="productos.imagenUrl"
+                        [title]="productos.modelo"
+                        [style.width.px]="imageWidth"
+                        [style.margin.px]="imageMargi"
+                        ></td>
+                    <td>{{productos.modelo}}</td>
+                    <td>{{productos.Descripcion}}</td>
+                    <td>{{productos.year}}</td>
+                    <td>{{productos.Precio}}</td>
+                    <td>{{productos.Marca}}</td>
+                    <td>{{productos.Color}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
