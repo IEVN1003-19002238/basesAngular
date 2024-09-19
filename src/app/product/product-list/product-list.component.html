@@ -9,11 +9,11 @@
         <div class="row">
             <div class="col-md-2">Filtrar por:</div>
             <div class="col-md-4">
-                <input type="text" class="form-control" name="filter">
+                <input [(ngModel)]="listFilter" type="text" class="form-control" name="filter">
             </div>
         </div>
         <div class="col-md-6">
-            <h3>Filtro: </h3>
+            <h3>Filtro:{{ listFilter}} </h3>
         </div>
     </div>
     <div class="table-responsive">
@@ -21,7 +21,7 @@
             <thead>
                 <tr>
                     <th>
-                        <button (click)="showImage()" type="button" class="btn btn-primary">Imagen</button>
+                        <button (click)="showImage()" type="button" class="btn btn-primary">{{muestraImg? 'Ocultar ':'Muestra ' }}Imagen</button>
                     </th>
                     <th>Modelo</th>
                     <th>Descripcion</th>
@@ -32,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let productos of productos">
+                <tr *ngFor="let productos of productos | productoFilter:listFilter">
                     <td>
                         <img *ngIf="muestraImg" [src]="productos.imagenUrl"
                         [title]="productos.modelo"
@@ -42,7 +42,7 @@
                     <td>{{productos.modelo}}</td>
                     <td>{{productos.Descripcion}}</td>
                     <td>{{productos.year}}</td>
-                    <td>{{productos.Precio}}</td>
+                    <td>{{productos.precio}}</td>
                     <td>{{productos.Marca}}</td>
                     <td>{{productos.Color}}</td>
                 </tr>
