@@ -1,0 +1,24 @@
+<p>cine works!</p>
+
+<p>ejemplo1 works!</p>
+<div>
+
+    <h1>Boletos a comprar</h1>
+    <h2>costo de los boletos es de $12</h2>
+    <h2>si compran mas de 5 boletos se da 15% de descuento</h2>
+    <h2>si compran tres, cuatro o cinco boletos se da 15% de descuento</h2>
+    <h2>si compran dos boletos no tienes descuento</h2>
+
+    <input type="checkbox" class="form-check-input" id="cineco">
+    <label  for="exampleCheck1">Tienes tarjeta CINECO</label>
+
+    <form [formGroup]="formulario">
+        <div>
+            <label for="">¿CUantos boletos comparas?</label>
+            <input formControlName="numero1" type="number">
+        </div>
+        
+
+        
+    </form>
+</div>
