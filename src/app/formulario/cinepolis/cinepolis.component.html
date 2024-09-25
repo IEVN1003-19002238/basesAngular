@@ -1,0 +1,33 @@
+<div class="boletos-cine-container">
+    <h2>Cinepolis</h2>
+    <form [formGroup]="boletosForm" (ngSubmit)="obtenerTotal()">
+      <div class="form-group">
+        <label for="nombreComprador">Nombre: </label>
+        <input formControlName="nombreComprador" type="text" id="nombreComprador" />
+        <br>
+      </div>
+ 
+      <div class="form-group">
+        <label for="numPersonas">Compradores</label>
+        <input formControlName="numPersonas" type="number" id="numPersonas" min="1" />
+        <br>
+      </div>
+ 
+      <div class="form-group">
+        <label for="numEntradas">Boletos: </label>
+        <input formControlName="numEntradas" type="number" id="numEntradas" min="1" />
+        <br>
+      </div>
+ 
+      <div class="form-group">
+        <label for="tarjetaSocioCineco">Cineco</label>
+        <input formControlName="tarjetaSocioCineco" type="checkbox" id="tarjetaSocioCineco" />
+      </div>
+ 
+      <button type="submit" [disabled]="boletosForm.invalid">Calcular</button>
+    </form>
+ 
+    <div *ngIf="montoTotal !== null">
+      <p>Total a pagar: {{ montoTotal}}</p>
+    </div>
+  </div>

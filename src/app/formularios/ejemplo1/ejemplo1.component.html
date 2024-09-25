@@ -1,19 +1,24 @@
-<p>ejemplo1 works!</p>
+<p>Compra de Boletos de Cine</p>
 <div>
 
-    <h1>Multiplica 2 numero</h1>
-    <form [formGroup]="formulario">
-        <div>
-            <label for="">primer numero</label>
-            <input formControlName="numero1" type="number">
-        </div>
-        
-        <div>
-            <label for="">segundo numero</label>
-            <input formControlName="numero2" type="number">
-        </div>
+  <h1>Compra de Boletos</h1>
+  <form [formGroup]="formulario">
+    <div>
+      <label for="compradores">Cantidad de compradores</label>
+      <input formControlName="cantidadCompradores" id="compradores" type="number" min="1">
+    </div>
 
-        <button (click)="multNumeros()" type="submit">Multiplicar</button>
-        <p>Resultado: {{resultado}}</p>
-    </form>
+    <div>
+      <label for="cantidad">Cantidad de boletos por comprador (máx. 7)</label>
+      <input formControlName="cantidadBoletos" id="cantidad" type="number" min="1" max="7">
+    </div>
+
+    <div>
+      <label for="ceneco">¿Tienes tarjeta CENECO?</label>
+      <input formControlName="tieneCeneco" id="ceneco" type="checkbox">
+    </div>
+
+    <button (click)="calcularTotal()" type="button">Calcular Total</button>
+    <p>Precio: {{totalConDescuento}}</p>
+  </form>
 </div>
