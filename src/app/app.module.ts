@@ -10,6 +10,7 @@ import { OperasBasComponent } from './formularios/operas-bas/operas-bas.componen
 import { Ejemplo1Component } from './formularios/ejemplo1/Ejemplo1Component';
 import { ResistenciasComponent } from './formularios/resistencias/resistencias.component';
 import { CinepolisComponent } from './formulario/cinepolis/cinepolis.component';
+import { ResistenciaComponent } from './formulario/resistencia/resistencia.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CinepolisComponent } from './formulario/cinepolis/cinepolis.component';
     OperasBasComponent,
     Ejemplo1Component,
     ResistenciasComponent,
-    CinepolisComponent
+    CinepolisComponent,
+    ResistenciaComponent
   ],
   imports: [
     BrowserModule,
